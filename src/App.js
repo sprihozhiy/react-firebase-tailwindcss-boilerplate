@@ -4,9 +4,9 @@ import Footer from "./layout/Footer";
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-gray-300 flex-col content-between">
       <Header />
-      <h1 className="text-2xl h-1/2 bg-orange-300">
+      <h1 className="text-2xl h-screen-main bg-orange-300">
         React + Firebase + TailwindCSS Boilerplate
       </h1>
       <Footer />

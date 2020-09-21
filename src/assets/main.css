@@ -10379,6 +10379,30 @@ video {
   height: 100vh;
 }
 
+.h-screen\/2 {
+  height: 50vh;
+}
+
+.h-screen\/3 {
+  height: calc(100vh / 3);
+}
+
+.h-screen\/4 {
+  height: calc(100vh / 4);
+}
+
+.h-screen\/5 {
+  height: calc(100vh / 5);
+}
+
+.h-screen\/10 {
+  height: calc(100vh / 10);
+}
+
+.h-screen-main {
+  height: 80vh;
+}
+
 .text-xs {
   font-size: 0.75rem;
 }
@@ -28603,6 +28627,30 @@ video {
     height: 100vh;
   }
 
+  .sm\:h-screen\/2 {
+    height: 50vh;
+  }
+
+  .sm\:h-screen\/3 {
+    height: calc(100vh / 3);
+  }
+
+  .sm\:h-screen\/4 {
+    height: calc(100vh / 4);
+  }
+
+  .sm\:h-screen\/5 {
+    height: calc(100vh / 5);
+  }
+
+  .sm\:h-screen\/10 {
+    height: calc(100vh / 10);
+  }
+
+  .sm\:h-screen-main {
+    height: 80vh;
+  }
+
   .sm\:text-xs {
     font-size: 0.75rem;
   }
@@ -46795,6 +46843,30 @@ video {
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-screen\/2 {
+    height: 50vh;
+  }
+
+  .md\:h-screen\/3 {
+    height: calc(100vh / 3);
+  }
+
+  .md\:h-screen\/4 {
+    height: calc(100vh / 4);
+  }
+
+  .md\:h-screen\/5 {
+    height: calc(100vh / 5);
+  }
+
+  .md\:h-screen\/10 {
+    height: calc(100vh / 10);
+  }
+
+  .md\:h-screen-main {
+    height: 80vh;
   }
 
   .md\:text-xs {
@@ -64991,6 +65063,30 @@ video {
     height: 100vh;
   }
 
+  .lg\:h-screen\/2 {
+    height: 50vh;
+  }
+
+  .lg\:h-screen\/3 {
+    height: calc(100vh / 3);
+  }
+
+  .lg\:h-screen\/4 {
+    height: calc(100vh / 4);
+  }
+
+  .lg\:h-screen\/5 {
+    height: calc(100vh / 5);
+  }
+
+  .lg\:h-screen\/10 {
+    height: calc(100vh / 10);
+  }
+
+  .lg\:h-screen-main {
+    height: 80vh;
+  }
+
   .lg\:text-xs {
     font-size: 0.75rem;
   }
@@ -83183,6 +83279,30 @@ video {
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:h-screen\/2 {
+    height: 50vh;
+  }
+
+  .xl\:h-screen\/3 {
+    height: calc(100vh / 3);
+  }
+
+  .xl\:h-screen\/4 {
+    height: calc(100vh / 4);
+  }
+
+  .xl\:h-screen\/5 {
+    height: calc(100vh / 5);
+  }
+
+  .xl\:h-screen\/10 {
+    height: calc(100vh / 10);
+  }
+
+  .xl\:h-screen-main {
+    height: 80vh;
   }
 
   .xl\:text-xs {
