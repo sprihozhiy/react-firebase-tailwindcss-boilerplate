@@ -5,6 +5,7 @@ import Footer from "./layout/Footer";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/forgotpassword" component={ForgotPassword} />
           <Route exact path="/dashboard" component={UserDashboard} />
         </Switch>
       </div>
