@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import db from "../../firebase/firebase";
 
 import UserPost from "./UserPost";
 import getData from "./utilities/getDataFromFirestore";

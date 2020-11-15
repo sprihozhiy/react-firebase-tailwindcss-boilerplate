@@ -1,25 +1,51 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useRef, useState} from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from '../../contexts/AuthContext';
 
 const SignIn = () => {
+
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/dashboard");
+    } catch {
+      setError("Failed to log in");
+    }
+    setLoading(false);
+  }
+
   return (
     <div className="flex h-full justify-center items-center">
       <div className="flex-col">
         <h2 className="text-center py-2">Sign In</h2>
-        <form className="p-4 flex-col border-solid border-2 border-white">
+        {error && <h3 className="text-red-600 text-center">{error}</h3>}
+        <form className="p-4 flex-col border-solid border-2 border-white" onSubmit={handleSubmit}>
           <input
             type="email"
             className="rounded my-2 p-1 block"
             placeholder="Email"
+            ref={emailRef}
             required
           />
           <input
             type="password"
             className="rounded my-2 p-1 block"
             placeholder="Password"
+            ref={passwordRef}
             required
           />
-          <button className="bg-teal-800 text-white rounded p-1 w-full">
+          <button className="bg-teal-800 text-white rounded p-1 w-full" disabled={loading}>
             Login
           </button>
           <p className="text-sm text-blue-700 py-2"><Link to="/forgotpassword">Forgot Password?</Link></p>

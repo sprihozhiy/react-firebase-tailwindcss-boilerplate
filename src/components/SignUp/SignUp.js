@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
 
 const SignUp = () => {
@@ -9,6 +10,7 @@ const SignUp = () => {
   const { signup } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,6 +23,7 @@ const SignUp = () => {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      history.push("/dashboard")
     } 
     catch(e) {
      // console.log(e);
@@ -60,6 +63,9 @@ const SignUp = () => {
             Sign Up
           </button>
         </form>
+        <div className="flex-col py-2">
+          <p className="text-sm text-center">Already have an account? <Link to="/" className="text-blue-700">Sign In</Link></p>
+        </div>
       </div>
     </div>
   );

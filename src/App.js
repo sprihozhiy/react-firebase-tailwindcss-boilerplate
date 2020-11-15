@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import PrivateRoute from './routing/PrivateRoute';
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
 import SignIn from "./components/SignIn/SignIn";
@@ -14,11 +15,11 @@ function App() {
       <Header />
       <div className="text-2xl h-screen-main">
         <Switch>
-          <Route exact path="/" component={SignIn} />
+          <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/forgotpassword" component={ForgotPassword} />
-          <Route exact path="/dashboard" component={UserDashboard} />
-          <Route exact path="/profile" component={UserProfile} />
+          <PrivateRoute exact path="/" component={UserDashboard} />
+          <PrivateRoute exact path="/profile" component={UserProfile} />
         </Switch>
       </div>
       <Footer />
