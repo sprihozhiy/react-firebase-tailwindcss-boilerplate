@@ -8,6 +8,7 @@ import SignUp from "./components/SignUp/SignUp";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
 import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 import UserProfile from "./components/UserProfile/UserProfile";
+import UpdateProfile from "./components/UserProfile/UpdateProfile";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/forgotpassword" component={ForgotPassword} />
           <PrivateRoute exact path="/" component={UserDashboard} />
           <PrivateRoute exact path="/profile" component={UserProfile} />
+          <PrivateRoute exact path="/update-profile" component={UpdateProfile} />
         </Switch>
       </div>
       <Footer />

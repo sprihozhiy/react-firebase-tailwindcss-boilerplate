@@ -18,7 +18,7 @@ const SignIn = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/dashboard");
+      history.push("/");
     } catch {
       setError("Failed to log in");
     }
@@ -45,7 +45,7 @@ const SignIn = () => {
             ref={passwordRef}
             required
           />
-          <button className="bg-teal-800 text-white rounded p-1 w-full" disabled={loading}>
+          <button className="bg-teal-800 text-white rounded p-1 w-full" disabled={loading} type="submit">
             Login
           </button>
           <p className="text-sm text-blue-700 py-2"><Link to="/forgotpassword">Forgot Password?</Link></p>

@@ -59,7 +59,7 @@ const SignUp = () => {
             ref={confirmPasswordRef}
             required
           />
-          <button className="bg-teal-800 text-white rounded p-1 w-full" disabled={loading}>
+          <button className="bg-teal-800 text-white rounded p-1 w-full" disabled={loading} type="submit">
             Sign Up
           </button>
         </form>
