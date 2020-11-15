@@ -1,6 +1,6 @@
 import firebase from "./config";
 import "firebase/firestore";
+import "firebase/auth";
 
-const db = firebase.firestore();
-
-export default db;
+export const db = firebase.firestore();
+export const auth = firebase.auth();

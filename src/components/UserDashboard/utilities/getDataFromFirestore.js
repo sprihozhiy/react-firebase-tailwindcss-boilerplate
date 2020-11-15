@@ -1,5 +1,4 @@
-import db from "../../firebase/firebase";
-// import { firestoreLooper } from "../../firebase/tools";
+import {db} from "../../../firebase/firebase";
 
 export default function getData(a) {
   db.collection("posts")

@@ -12,9 +12,6 @@ const Header = () => {
           <NavLink to="/">Sign In</NavLink>
         </li>
         <li className="px-1 text-white cursor-pointer hover:underline">
-          <NavLink to="/forgotpassword">Forgot Pass</NavLink>
-        </li>
-        <li className="px-1 text-white cursor-pointer hover:underline">
           <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
       </ul>

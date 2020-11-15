@@ -11,11 +11,13 @@ const SignIn = () => {
             type="email"
             className="rounded my-2 p-1 block"
             placeholder="Email"
+            required
           />
           <input
             type="password"
             className="rounded my-2 p-1 block"
             placeholder="Password"
+            required
           />
           <button className="bg-teal-800 text-white rounded p-1 w-full">
             Login

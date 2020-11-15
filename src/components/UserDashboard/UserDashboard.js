@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import db from "../../firebase/firebase";
 
 import UserPost from "./UserPost";
-import getData from "./getDataFromFirestore";
+import getData from "./utilities/getDataFromFirestore";
 
 const UserDashboard = () => {
   // RETRIEVING DATA FROM A FIRESTORE
