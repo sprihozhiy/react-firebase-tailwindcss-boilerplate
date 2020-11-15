@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -20,7 +21,11 @@ const SignIn = () => {
             Login
           </button>
         </form>
+        <div className="flex-col">
+          <p className="text-sm">If you do not have an account, please, <Link to="/signup" className="text-blue-700">sign up</Link></p>
+        </div>
       </div>
+      
     </div>
   );
 };

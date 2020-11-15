@@ -9,9 +9,6 @@ const Header = () => {
       </NavLink>
       <ul className="flex content-between">
         <li className="px-1 text-white cursor-pointer hover:underline">
-          <NavLink to="/signup">Sign Up</NavLink>
-        </li>
-        <li className="px-1 text-white cursor-pointer hover:underline">
           <NavLink to="/">Sign In</NavLink>
         </li>
         <li className="px-1 text-white cursor-pointer hover:underline">
