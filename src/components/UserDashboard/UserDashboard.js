@@ -1,20 +1,41 @@
 import React, { useEffect, useState } from "react";
-
 import UserPost from "./UserPost";
-import getData from "./utilities/getDataFromFirestore";
+import {db} from "../../firebase/firebase";
+import AddPost from "./AddPost";
+import { useAuth } from "../../contexts/AuthContext";
 
 const UserDashboard = () => {
-  // RETRIEVING DATA FROM A FIRESTORE
   const [userPosts, setUserPosts] = useState([]);
+  const { currentUser } = useAuth();
+
+  function getData(a) {
+    db.collection("posts")
+    .where('user', '==', currentUser.uid)
+    .onSnapshot((snapshot) => {
+      const posts = [];
+      snapshot.forEach((doc)=> {
+        posts.push(doc.data());
+      })
+      setUserPosts(posts);
+    })
+  }
+
   useEffect(() => {
-    getData(setUserPosts);
+    getData();
+    // eslint-disable-next-line
   }, []);
 
   const postList = userPosts.map((post) => {
-    return <UserPost title={post.title} post={post.post} key={post.id} />;
+    return <UserPost title={post.title} description={post.description} key={post.id} />;
   });
 
-  return <div>{postList.length > 0 ? postList : null}</div>;
+  return (
+    <div>
+      <AddPost />
+      <div>
+        {postList.length > 0 ? postList : null}
+      </div>    
+    </div>);
 };
 
 export default UserDashboard;
