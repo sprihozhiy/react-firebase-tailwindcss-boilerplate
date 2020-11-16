@@ -6,11 +6,11 @@ A boilerplate for rapid ReactJS development using Firebase with Firestore as a B
 
 1. Sign Up using Email and Social Profiles - []
 2. Sign In using Email and Social Profiles - []
-3. Sign Out - []
-4. Password Forget functionality - []
-5. Password Change functionality - []
-6. Email validation - []
-7. Protected Routes for Authorized Users - []
+3. Sign Out - [X]
+4. Password Forget functionality - [X]
+5. Password Change functionality - [X]
+6. Email validation - [X]
+7. Protected Routes for Authorized Users - [X]
 8. Firestore Database with Users and CRUD functionality - []
 9. Roles-Based Authorization - []
 

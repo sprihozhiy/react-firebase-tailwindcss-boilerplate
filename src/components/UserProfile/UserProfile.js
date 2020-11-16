@@ -22,7 +22,7 @@ function UserProfile() {
         <div className="flex h-full justify-center items-center">
             <div className="flex-col border">
                 <h2 className="text-center py-2">User Profile</h2>
-                {error && <h3 className="text-red-600 text-center">{error}</h3>}
+                {error && <p className="text-red-600 text-center text-sm">{error}</p>}
                 <div className="p-4 flex-col border-solid border-2 border-white">
                 <p><strong>Email:</strong> {currentUser.email}</p>
                 <div>

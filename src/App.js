@@ -16,9 +16,11 @@ function App() {
       <Header />
       <div className="text-2xl h-screen-main">
         <Switch>
+          {/* Authentication */}
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/forgotpassword" component={ForgotPassword} />
+          {/*User Area*/}
           <PrivateRoute exact path="/" component={UserDashboard} />
           <PrivateRoute exact path="/profile" component={UserProfile} />
           <PrivateRoute exact path="/update-profile" component={UpdateProfile} />

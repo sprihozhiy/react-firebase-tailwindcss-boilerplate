@@ -29,7 +29,7 @@ const SignIn = () => {
     <div className="flex h-full justify-center items-center">
       <div className="flex-col">
         <h2 className="text-center py-2">Sign In</h2>
-        {error && <h3 className="text-red-600 text-center">{error}</h3>}
+        {error && <p className="text-red-600 text-center text-sm">{error}</p>}
         <form className="p-4 flex-col border-solid border-2 border-white" onSubmit={handleSubmit}>
           <input
             type="email"
