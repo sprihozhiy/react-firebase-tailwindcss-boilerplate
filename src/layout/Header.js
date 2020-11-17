@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
-const Header = () => {
+function Header() {
   const { currentUser, logout } = useAuth();
   const history = useHistory()
 

@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from '../../contexts/AuthContext';
 
-const SignIn = () => {
+function SignIn() {
 
   const emailRef = useRef();
   const passwordRef = useRef();

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import UserPost from "./UserPost";
 import {db} from "../../firebase/firebase";
-import AddPost from "./AddPost";
 import { useAuth } from "../../contexts/AuthContext";
+import UserPost from "./UserPost";
+import AddPost from "./AddPost";
 
-const UserDashboard = () => {
+
+function UserDashboard() {
   const [userPosts, setUserPosts] = useState([]);
   const { currentUser } = useAuth();
 
@@ -20,13 +21,24 @@ const UserDashboard = () => {
     })
   }
 
+  function remove(id) {
+    // const postID = db.collection('posts').doc(`${id}`);
+    // console.log(postID);
+    // postID.delete();
+    // setUserPosts(userPosts.filter((l) => l.id !== id));
+  }
+
+  function update(){
+
+  }
+
   useEffect(() => {
     getData();
     // eslint-disable-next-line
   }, []);
 
   const postList = userPosts.map((post) => {
-    return <UserPost title={post.title} description={post.description} key={post.id} />;
+    return <UserPost title={post.title} description={post.description} key={post.id} removePost={remove} updatePost={update}/>;
   });
 
   return (

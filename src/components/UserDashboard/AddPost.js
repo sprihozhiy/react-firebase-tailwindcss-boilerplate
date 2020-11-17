@@ -18,7 +18,14 @@ export default function AddPost() {
     }
 
     function handleAddPost(){
-        const newPost = {
+        if(title.length === 0) {
+            //CHANGE TO VALIDATION MESSAGE
+            console.log('Add title, please');
+        } else if (description.length === 0) {
+            //CHANGE TO VALIDATION MESSAGE
+            console.log('Add description, please');
+        } else {
+            const newPost = {
             title,
             description,
             id: uuidv4(),
@@ -33,7 +40,9 @@ export default function AddPost() {
         .catch((e) => {
             console.log(e);
         });
-        ;
+        setTitle('');
+        setDescription('');
+        }
     }
 
     return (
