@@ -10,26 +10,38 @@ function UserDashboard() {
   const { currentUser } = useAuth();
 
   function getData(a) {
-    db.collection("posts")
-    .where('user', '==', currentUser.uid)
-    .onSnapshot((snapshot) => {
-      const posts = [];
-      snapshot.forEach((doc)=> {
-        posts.push(doc.data());
+    try{
+      db.collection("posts")
+      .where('user', '==', currentUser.uid)
+      .onSnapshot((snapshot) => {
+        const posts = [];
+        snapshot.forEach((doc)=> {
+          posts.push(doc.data());
+        })
+        setUserPosts(posts);
       })
-      setUserPosts(posts);
-    })
+    } catch(e) {
+      console.log(e);
+    }
   }
 
   function remove(id) {
-    // const postID = db.collection('posts').doc(`${id}`);
-    // console.log(postID);
-    // postID.delete();
-    // setUserPosts(userPosts.filter((l) => l.id !== id));
+    try {
+      const postRef = db.collection('posts').doc(`${id}`);
+      postRef.delete();
+      setUserPosts(userPosts.filter((l) => l.id !== id));
+    } catch(e) {
+      console.log(e);
+    }
   }
 
-  function update(){
-
+  function update(
+    id,
+    updatedTitle,
+    updatedDescription
+    ) {
+    
+    // lastUpdate: firebase.firestore.FieldValue.serverTimestamp(),
   }
 
   useEffect(() => {
@@ -38,7 +50,7 @@ function UserDashboard() {
   }, []);
 
   const postList = userPosts.map((post) => {
-    return <UserPost title={post.title} description={post.description} key={post.id} removePost={remove} updatePost={update}/>;
+    return <UserPost title={post.title} description={post.description} key={post.id} id={post.id} removePost={remove} updatePost={update}/>;
   });
 
   return (
