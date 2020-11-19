@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import firebase from '../../firebase/config';
 import {db} from "../../firebase/firebase";
 import { useAuth } from "../../contexts/AuthContext";
 import UserPost from "./UserPost";
@@ -39,10 +40,20 @@ function UserDashboard() {
     id,
     updatedTitle,
     updatedDescription
-    ) {
-    
-    // lastUpdate: firebase.firestore.FieldValue.serverTimestamp(),
-  }
+    ) 
+    {
+      try{
+        const updatedPost = {
+          title: updatedTitle,
+          description: updatedDescription,
+          lastUpdate: firebase.firestore.FieldValue.serverTimestamp(),
+        }
+        const postRef = db.collection('posts').doc(`${id}`);
+        postRef.update(updatedPost);
+      } catch(e) {
+        console.log(e);
+      }
+    }
 
   useEffect(() => {
     getData();

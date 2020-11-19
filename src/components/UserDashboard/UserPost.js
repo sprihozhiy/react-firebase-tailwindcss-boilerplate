@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import firebase from '../../firebase/config';
-// import {db} from "../../firebase/firebase";
 
 function UserPost(props){
   const [isEditing, setIsEditing] = useState(false);
