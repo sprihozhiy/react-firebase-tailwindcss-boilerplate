@@ -10,6 +10,7 @@ function UserDashboard() {
   const [userPosts, setUserPosts] = useState([]);
   const { currentUser } = useAuth();
 
+  // Get Data from a Database
   function getData(a) {
     try{
       db.collection("posts")
@@ -26,6 +27,7 @@ function UserDashboard() {
     }
   }
 
+  //Delete post
   function remove(id) {
     try {
       const postRef = db.collection('posts').doc(`${id}`);
@@ -36,6 +38,7 @@ function UserDashboard() {
     }
   }
 
+  //Update post
   function update(
     id,
     updatedTitle,
